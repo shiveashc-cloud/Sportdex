@@ -5,6 +5,5 @@
 
 extern Adafruit_ILI9341 tft;
 
-
 void initDisplay();
 void clearScreen();

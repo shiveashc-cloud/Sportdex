@@ -9,3 +9,6 @@ void drawHeader();
 void drawFooter();
 
 void drawMatchCard(Match match);
+
+void drawLeagueTable();
+void drawFixturesScreen();

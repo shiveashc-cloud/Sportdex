@@ -14,7 +14,7 @@ String fetchTestData() {
     Serial.println("Connecting to API...");
 
     http.begin(client,
-        "https://www.thesportsdb.com/api/v1/json/123/lookuptable.php?l=4328&s=2025-2026");
+        "https://www.thesportsdb.com/api/v1/json/123/lookuptable.php?l=4328");
 
     http.addHeader("x-apisports-key", API_KEY);
 

@@ -10,6 +10,7 @@ void initDisplay() {
   tft.setRotation(1);
 
   tft.fillScreen(ILI9341_BLACK);
+  
 
 }
 

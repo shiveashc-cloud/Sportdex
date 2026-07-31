@@ -2,20 +2,27 @@
 
 #include <Arduino.h>
 
-struct Match {
-
+struct Match
+{
     String league;
 
     String homeTeam;
-
     String awayTeam;
 
-    int homeScore;
-
-    int awayScore;
+    String date;
+    String time;
 
     String status;
 
-    int minute;
+    int homeScore;
+    int awayScore;
+};
 
+struct Standing
+{
+    int position;
+
+    String team;
+
+    int points;
 };

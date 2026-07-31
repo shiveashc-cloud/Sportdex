@@ -1,6 +1,6 @@
 #include "ui.h"
 #include "display.h"
-
+/*
 void drawHeader() {
 
     tft.fillRect(0, 0, 320, 30, ILI9341_BLUE);
@@ -79,3 +79,25 @@ void drawMatchCard(Match match) {
 }
 
 void drawBootScreen() {}
+*/
+void drawLeagueTable()
+{
+    tft.fillScreen(ILI9341_BLACK);
+
+    tft.setCursor(10, 10);
+    tft.setTextColor(ILI9341_WHITE);
+    tft.setTextSize(2);
+
+    tft.println("League Table");
+}
+
+void drawFixturesScreen()
+{
+    tft.fillScreen(ILI9341_BLACK);
+
+    tft.setCursor(10, 10);
+    tft.setTextColor(ILI9341_WHITE);
+    tft.setTextSize(2);
+
+    tft.println("Fixtures");
+}

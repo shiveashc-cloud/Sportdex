@@ -3,21 +3,66 @@
   "author": "Shiveash C",
   "editor": "wokwi",
   "parts": [
-    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -48, "left": 43.24, "attrs": {} },
-    { "type": "wokwi-ili9341", "id": "lcd1", "top": -85.6, "left": -201.9, "attrs": {} }
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -48,
+      "left": 43.24,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "lcd1",
+      "top": -85.6,
+      "left": -201.9,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnPrev",
+      "top": 170,
+      "left": 220,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnNext",
+      "top": 170,
+      "left": 280,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnFav",
+      "top": 170,
+      "left": 400,
+      "attrs": { "color": "red" }
+    }
   ],
+
   "connections": [
-    [ "esp:TX", "$serialMonitor:RX", "", [] ],
-    [ "esp:RX", "$serialMonitor:TX", "", [] ],
-    [ "lcd1:VCC", "esp:3V3", "red", [ "v0" ] ],
-    [ "lcd1:GND", "esp:GND.2", "black", [ "v0" ] ],
-    [ "lcd1:CS", "esp:15", "green", [ "v0" ] ],
-    [ "lcd1:RST", "esp:4", "green", [ "v0" ] ],
-    [ "lcd1:D/C", "esp:2", "green", [ "v0" ] ],
-    [ "lcd1:MOSI", "esp:23", "green", [ "v0" ] ],
-    [ "lcd1:SCK", "esp:18", "green", [ "v0" ] ],
-    [ "lcd1:MISO", "esp:19", "green", [ "v0" ] ],
-    [ "lcd1:LED", "esp:3V3", "green", [ "v0" ] ]
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
+
+    ["lcd1:VCC", "esp:3V3", "red", ["v0"]],
+    ["lcd1:GND", "esp:GND.2", "black", ["v0"]],
+    ["lcd1:CS", "esp:15", "green", ["v0"]],
+    ["lcd1:RST", "esp:4", "green", ["v0"]],
+    ["lcd1:D/C", "esp:2", "green", ["v0"]],
+    ["lcd1:MOSI", "esp:23", "green", ["v0"]],
+    ["lcd1:SCK", "esp:18", "green", ["v0"]],
+    ["lcd1:MISO", "esp:19", "green", ["v0"]],
+    ["lcd1:LED", "esp:3V3", "green", ["v0"]],
+
+    ["btnPrev:1.l", "esp:25", "green"],
+    ["btnPrev:2.r", "esp:GND.1", "black"],
+
+    ["btnNext:1.l", "esp:26", "green"],
+    ["btnNext:2.r", "esp:GND.1", "black"],
+
+    ["btnFav:1.l", "esp:14", "green"],
+    ["btnFav:2.r", "esp:GND.1", "black"]
   ],
+
   "dependencies": {}
 }
