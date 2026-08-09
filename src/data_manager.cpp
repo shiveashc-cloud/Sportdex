@@ -1,33 +1,29 @@
 #include "data_manager.h"
-#include "football_api.h"
 
 
-extern Standing leagueTable[20];
+Standing leagueTable[20];
 
-extern int teamCount = 0;
-
-
-extern Match previousMatch;
-extern Match nextMatch;
+int teamCount = 0;
 
 
+Match previousMatch;
 
-void loadSportsData()
+Match nextMatch;
+
+
+
+void clearData()
 {
-
-    getLeagueTable(
-        leagueTable,
-        teamCount
-    );
+    teamCount = 0;
 
 
-    getPreviousMatch(
-        previousMatch
-    );
+    previousMatch = Match();
+
+    nextMatch = Match();
 
 
-    getNextMatch(
-        nextMatch
-    );
-
+    for(int i=0;i<20;i++)
+    {
+        leagueTable[i] = Standing();
+    }
 }

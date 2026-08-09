@@ -18,15 +18,16 @@ struct Match
     String homeTeam;
     String awayTeam;
 
-    String date;
-    String time;
-
-    String status;
-
     int homeScore;
     int awayScore;
+
+    String date;
+    String time;
 };
 
 
-extern Match previousMatch;
-extern Match nextMatch;
+struct Team
+{
+    String name;
+    int id;
+};

@@ -1,20 +1,73 @@
 #include "screen_manager.h"
-#include "ui.h"
+
+
+#include "home_screen.h"
+#include "football_screen.h"
+#include "settings_screen.h"
+
+
+
+Screen currentScreen = HOME_SCREEN;
+
+
 
 void showScreen(Screen screen)
 {
-    switch (screen)
+    currentScreen = screen;
+
+
+    updateScreen();
+}
+
+
+
+
+void updateScreen()
+{
+
+    switch(currentScreen)
     {
+
+
         case HOME_SCREEN:
-            drawLeagueTable();
+
+            drawHomeScreen();
+
             break;
+
+
 
         case FOOTBALL_SCREEN:
-            drawFixturesScreen();
+
+            drawFootballMenu();
+
             break;
 
-        default:
-            drawLeagueTable();
+
+
+        case FOOTBALL_TABLE:
+
+            drawFootballTable();
+
             break;
+
+
+
+        case FOOTBALL_FIXTURES:
+
+            drawFootballFixtures();
+
+            break;
+
+
+
+        case SETTINGS_SCREEN:
+
+            drawSettingsScreen();
+
+            break;
+
+
     }
+
 }

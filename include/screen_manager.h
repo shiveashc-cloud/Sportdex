@@ -1,19 +1,25 @@
 #pragma once
 
 
-enum Screen {
-
+enum Screen
+{
     HOME_SCREEN,
 
     FOOTBALL_SCREEN,
 
-    CRICKET_SCREEN,
+    FOOTBALL_TABLE,
 
-    F1_SCREEN,
+    FOOTBALL_FIXTURES,
 
     SETTINGS_SCREEN
-
 };
+
+
 extern Screen currentScreen;
 
+
+
 void showScreen(Screen screen);
+
+
+void updateScreen();
