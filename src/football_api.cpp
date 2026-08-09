@@ -4,7 +4,7 @@
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
 
-#define LEAGUE_TABLE_URL "https://www.thesportsdb.com/api/v1/json/123/lookuptable.php?l=4328&s=2025-2026"
+#define LEAGUE_TABLE_URL "https://www.thesportsdb.com/api/v1/json/123/lookuptable.php?l=4328&s=2026-2027"
 #define PREVIOUS_MATCH_URL "https://www.thesportsdb.com/api/v1/json/123/eventslast.php?id=133619"
 #define NEXT_MATCH_URL "https://www.thesportsdb.com/api/v1/json/123/eventsnext.php?id=133619"
 

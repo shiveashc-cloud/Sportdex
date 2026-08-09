@@ -1,5 +1,6 @@
 #pragma once
 
+
 enum Screen {
 
     HOME_SCREEN,
@@ -13,5 +14,6 @@ enum Screen {
     SETTINGS_SCREEN
 
 };
+extern Screen currentScreen;
 
 void showScreen(Screen screen);

@@ -2,6 +2,15 @@
 
 #include <Arduino.h>
 
+
+struct Standing
+{
+    int position;
+    String team;
+    int points;
+};
+
+
 struct Match
 {
     String league;
@@ -18,11 +27,6 @@ struct Match
     int awayScore;
 };
 
-struct Standing
-{
-    int position;
 
-    String team;
-
-    int points;
-};
+extern Match previousMatch;
+extern Match nextMatch;
