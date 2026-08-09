@@ -3,17 +3,25 @@
 #include <WiFi.h>
 
 
-
-const char* SSID="iPhone";
-
-const char* PASSWORD="Shivvy@123";
+const char* SSID = "iPhone";
+const char* PASSWORD = "Shivvy@123";
 
 
 
 void connectWiFi()
 {
 
-    Serial.print("Connecting WiFi");
+    Serial.println("Connecting WiFi...");
+
+
+    WiFi.mode(WIFI_STA);
+
+
+    WiFi.disconnect();
+
+
+    delay(1000);
+
 
 
     WiFi.begin(
@@ -22,13 +30,14 @@ void connectWiFi()
     );
 
 
-    int count=0;
+    int attempts = 0;
+
 
 
     while(
-    WiFi.status()!=WL_CONNECTED
-    &&
-    count<30
+        WiFi.status() != WL_CONNECTED
+        &&
+        attempts < 30
     )
     {
 
@@ -36,22 +45,33 @@ void connectWiFi()
 
         Serial.print(".");
 
-        count++;
+        attempts++;
 
     }
 
 
 
-    if(WiFi.status()==WL_CONNECTED)
+    if(WiFi.status() == WL_CONNECTED)
     {
 
-        Serial.println("\nConnected");
+        Serial.println();
+
+        Serial.println("WiFi Connected!");
+
+        Serial.print("IP: ");
+
+        Serial.println(
+            WiFi.localIP()
+        );
 
     }
+
     else
     {
 
-        Serial.println("\nWiFi Failed");
+        Serial.println();
+
+        Serial.println("WiFi Failed!");
 
     }
 
@@ -59,9 +79,10 @@ void connectWiFi()
 
 
 
+
 bool isWiFiConnected()
 {
 
-return WiFi.status()==WL_CONNECTED;
+    return WiFi.status() == WL_CONNECTED;
 
 }

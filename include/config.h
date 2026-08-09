@@ -11,8 +11,8 @@
 
 // Buttons
 
-#define BUTTON_PREVIOUS 12
-#define BUTTON_NEXT 13
+#define BUTTON_PREVIOUS 25
+#define BUTTON_NEXT 26
 #define BUTTON_SELECT 14
 
 

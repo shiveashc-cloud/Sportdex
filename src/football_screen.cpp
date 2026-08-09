@@ -2,6 +2,8 @@
 
 #include "display.h"
 
+#include "screen_manager.h"
+
 
 
 void drawFootballMenu()
@@ -21,19 +23,46 @@ void drawFootballMenu()
 
     tft.setCursor(30,100);
 
-    tft.println("> Fixtures");
+
+    if(menuIndex==0)
+        tft.print("> ");
+    else
+        tft.print("  ");
+
+    tft.println("Fixtures");
+
+
 
 
     tft.setCursor(30,140);
 
-    tft.println("  Table");
+
+    if(menuIndex==1)
+        tft.print("> ");
+    else
+        tft.print("  ");
+
+
+    tft.println("Table");
+
+
 
 
     tft.setCursor(30,180);
 
-    tft.println("  Settings");
+
+    if(menuIndex==2)
+        tft.print("> ");
+    else
+        tft.print("  ");
+
+
+    tft.println("Settings");
+
 
 }
+
+
 
 
 
@@ -47,9 +76,7 @@ void drawFootballTable()
 
     tft.setTextSize(2);
 
-
-    tft.println("LEAGUE TABLE");
-
+    tft.println("TABLE");
 
 }
 
@@ -65,8 +92,6 @@ void drawFootballFixtures()
 
     tft.setTextSize(2);
 
-
     tft.println("FIXTURES");
-
 
 }

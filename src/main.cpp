@@ -13,40 +13,133 @@
 
 
 
+
 void setup()
 {
 
-Serial.begin(115200);
+    Serial.begin(115200);
 
 
-Serial.println("SPORTDEX STARTING");
+
+    Serial.println("SPORTDEX STARTING");
 
 
-clearData();
+
+    clearData();
 
 
-initDisplay();
+    initDisplay();
 
 
-connectWiFi();
+    connectWiFi();
 
 
-initButtons();
+
+    initButtons();
 
 
-showScreen(HOME_SCREEN);
 
+    showScreen(HOME_SCREEN);
 
 }
+
+
 
 
 
 void loop()
 {
 
-handleButtons();
+
+    if(nextPressed())
+    {
+
+        menuIndex++;
 
 
-delay(50);
+        if(menuIndex > 2)
+            menuIndex = 0;
+
+
+
+        updateScreen();
+
+    }
+
+
+
+
+
+    if(previousPressed())
+    {
+
+
+        if(currentScreen != HOME_SCREEN)
+        {
+
+            showScreen(HOME_SCREEN);
+
+        }
+
+    }
+
+
+
+
+
+
+
+    if(selectPressed())
+    {
+
+
+        switch(currentScreen)
+        {
+
+
+            case HOME_SCREEN:
+
+                showScreen(FOOTBALL_MENU);
+
+                break;
+
+
+
+
+            case FOOTBALL_MENU:
+
+
+                if(menuIndex == 0)
+                    showScreen(FOOTBALL_FIXTURES);
+
+
+                else if(menuIndex == 1)
+                    showScreen(FOOTBALL_TABLE);
+
+
+
+                else if(menuIndex == 2)
+                    showScreen(SETTINGS_SCREEN);
+
+
+                break;
+
+
+
+            default:
+
+                showScreen(FOOTBALL_MENU);
+
+                break;
+
+
+        }
+
+
+    }
+
+
+
+    delay(50);
 
 }
