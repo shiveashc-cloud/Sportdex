@@ -1,9 +1,12 @@
 #include "data_manager.h"
 
+#include "football_api.h"
+
+
 
 Standing leagueTable[20];
 
-int teamCount = 0;
+int leagueCount = 0;
 
 
 Match previousMatch;
@@ -12,18 +15,78 @@ Match nextMatch;
 
 
 
-void clearData()
+int selectedTeam = 51;
+
+
+
+
+void loadFootballData()
 {
-    teamCount = 0;
+
+    Serial.println("Loading Football Data");
 
 
-    previousMatch = Match();
-
-    nextMatch = Match();
-
-
-    for(int i=0;i<20;i++)
+    if(!getLeagueTable(
+        leagueTable,
+        leagueCount))
     {
-        leagueTable[i] = Standing();
+        Serial.println("Table failed");
     }
+
+
+    if(!getPreviousMatch(previousMatch))
+    {
+        Serial.println("Previous failed");
+    }
+
+
+    if(!getNextMatch(nextMatch))
+    {
+        Serial.println("Next failed");
+    }
+
+}
+
+
+
+
+Standing* getLeagueTable()
+{
+    return leagueTable;
+}
+
+
+
+int getLeagueCount()
+{
+    return leagueCount;
+}
+
+
+
+Match getPreviousMatch()
+{
+    return previousMatch;
+}
+
+
+
+Match getNextMatch()
+{
+    return nextMatch;
+}
+
+
+
+
+void setSelectedTeam(int id)
+{
+    selectedTeam=id;
+}
+
+
+
+int getSelectedTeam()
+{
+    return selectedTeam;
 }

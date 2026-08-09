@@ -3,14 +3,23 @@
 #include "models.h"
 
 
-extern Standing leagueTable[20];
-
-extern int teamCount;
+void loadFootballData();
 
 
-extern Match previousMatch;
-
-extern Match nextMatch;
+Standing* getLeagueTable();
 
 
-void clearData();
+int getLeagueCount();
+
+
+Match getPreviousMatch();
+
+
+Match getNextMatch();
+
+
+
+void setSelectedTeam(int id);
+
+
+int getSelectedTeam();

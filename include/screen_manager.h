@@ -21,7 +21,6 @@ enum Screen
 extern Screen currentScreen;
 
 
-
 extern int menuIndex;
 
 
@@ -29,5 +28,7 @@ extern int menuIndex;
 void showScreen(Screen screen);
 
 
-
 void updateScreen();
+
+
+void handleScreenInput();
